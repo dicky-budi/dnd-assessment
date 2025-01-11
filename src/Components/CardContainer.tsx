@@ -12,6 +12,7 @@ export default function CardContainer({
   const { setNodeRef, isOver } = useDroppable({
     id: card.id,
   });
+
   return (
     <div
       className={`rounded-lg bg-[#3E5879] p-2 w-[25rem] space-y-4 h-full ${
@@ -24,9 +25,13 @@ export default function CardContainer({
         {card.title}
       </h2>
       <div className="flex flex-col gap-4 h-auto">
-        {option.map((option, index) => (
-          <CardOption key={index} option={option} />
-        ))}
+        {option
+          .sort((a, b) =>
+            a.label.toLowerCase() > b.label.toLowerCase() ? 1 : -1
+          )
+          .map((option, index) => (
+            <CardOption key={index} option={option} />
+          ))}
       </div>
     </div>
   );

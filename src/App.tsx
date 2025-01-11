@@ -9,9 +9,9 @@ function App() {
   const [currentOptions, setCurrentOptions] =
     useState<OptionsData[]>(optionData);
 
-  const selectedOptions = currentOptions.filter(
-    (item) => item.parent_id === "selected_services"
-  );
+  const selectedOptions = currentOptions
+    .filter((item) => item.parent_id === "selected_services")
+    .sort((a, b) => (a.label.toLowerCase() > b.label.toLowerCase() ? 1 : -1));
 
   function handleDragEnd(event: DragEndEvent) {
     const { active, over } = event;
