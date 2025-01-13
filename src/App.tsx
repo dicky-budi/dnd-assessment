@@ -37,7 +37,7 @@ function App() {
   return (
     <>
       {selectedOptions.length > 0 && (
-        <section className="flex gap-2 mb-4">
+        <section className="flex gap-2 mb-4 md:justify-start flex-wrap">
           {selectedOptions.map((option) => (
             <div
               key={option.value}
@@ -48,7 +48,7 @@ function App() {
           ))}
         </section>
       )}
-      <div className="container flex justify-center gap-12">
+      <div className="container flex justify-center gap-12 md:flex-row flex-col w-[calc(100vw-5rem)] md:w-full">
         <DndContext onDragEnd={handleDragEnd}>
           {cardType.map((card: CardType) => (
             <CardContainer

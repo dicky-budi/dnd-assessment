@@ -15,7 +15,7 @@ export default function CardContainer({
 
   return (
     <div
-      className={`rounded-lg bg-[#3E5879] p-2 w-[25rem] space-y-4 h-full ${
+      className={`rounded-lg bg-[#3E5879] p-5 md:p-2 w-full md:w-[25rem] space-y-4 h-full ${
         isOver &&
         "shadow-[0px_2px_3px_8px_rgba(255,_255,_255,_0.05)] transition-shadow ease-out delay-150 "
       }`}
